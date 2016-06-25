@@ -9,7 +9,7 @@ WORKDIR /usr/local/vpnserver
 
 
 RUN apt-get update &&\
-        apt-get -y -q install gcc make wget && \
+        apt-get -y -q install gcc make wget iptables && \
         apt-get clean && \
         rm -rf /var/cache/apt/* /var/lib/apt/lists/* && \
         wget http://www.softether-download.com/files/softether/${VERSION}-tree/Linux/SoftEther_VPN_Server/64bit_-_Intel_x64_or_AMD64/softether-vpnserver-${VERSION}-linux-x64-64bit.tar.gz -O /tmp/softether-vpnserver.tar.gz &&\
