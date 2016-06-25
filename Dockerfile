@@ -5,10 +5,12 @@ MAINTAINER Frank Rosquin <frank.rosquin@gmail.com>
 
 #ENV VERSION v4.18-9570-rtm-2015.07.26
 ENV VERSION v4.21-9613-beta-2016.04.24
+ENV DEBIAN_FRONTEND noninteractive
+
 WORKDIR /usr/local/vpnserver
 
-
 RUN apt-get update &&\
+        apt-get dist-upgrade -y && \
         apt-get -y -q install gcc make wget iptables && \
         apt-get clean && \
         rm -rf /var/cache/apt/* /var/lib/apt/lists/* && \
